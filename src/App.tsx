@@ -7,19 +7,24 @@ import Rates from "./pages/Rates";
 //? COMPONENTS
 import Navbar from "./components/Navbar";
 
+//? CONTEXT
+import { RatesProvider } from "./lib/context/RatesContext";
+
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-base-200">
-        <Navbar />
-        <main className="py-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/tasas" element={<Rates />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <RatesProvider>
+      <Router>
+        <div className="min-h-screen bg-base-200 text-base-950">
+          <Navbar />
+          <main className="py-4">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/tasas" element={<Rates />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </RatesProvider>
   );
 }
 

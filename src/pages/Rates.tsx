@@ -7,7 +7,9 @@ import RatesCard from "../components/RatesCard";
 const Rates = () => {
   return (
     <Section>
-      <RatesCard />
+      <div className="space-y-8">
+        <RatesCard showTitle={true} />
+      </div>
     </Section>
   );
 };
