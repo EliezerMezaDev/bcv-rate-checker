@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { getExchangeRates } from '../api/exchangeRates';
-import { ExchangeRate } from '../lib/types';
+import { useEffect, useState } from "react";
+import { getExchangeRates } from "../api/exchangeRates";
+import { ExchangeRate } from "../lib/types";
 
 const Rates = () => {
   const [rates, setRates] = useState<ExchangeRate[]>([]);
@@ -14,14 +14,13 @@ const Rates = () => {
         setRates(data);
         setError(null);
       } catch (err) {
-        setError('Error al cargar las tasas de cambio');
+        setError("Error al cargar las tasas de cambio");
       } finally {
         setLoading(false);
       }
     };
 
     fetchRates();
-    // Actualizar cada 5 minutos
     const interval = setInterval(fetchRates, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
@@ -47,23 +46,29 @@ const Rates = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Tasas de Cambio</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {rates.map((rate) => (
-          <div key={rate.fuente} className="bg-white shadow-lg rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-2">{rate.nombre}</h2>
-            <div className="text-3xl font-bold text-blue-600 mb-2">
-              ${rate.promedio.toFixed(2)}
+    <div className="px-4">
+      <section className="container mx-auto">
+        <h1 className="text-3xl font-bold mb-4">Tasas de Cambio</h1>
+        <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {rates.map((rate) => (
+            <div
+              key={rate.fuente}
+              className="bg-white shadow-lg rounded-lg p-6"
+            >
+              <h2 className="text-xl font-semibold mb-2">{rate.nombre}</h2>
+              <div className="text-3xl font-bold text-blue-600 mb-2">
+                {`${rate.promedio.toFixed(2)} Bs`}
+              </div>
+              <p className="text-sm text-gray-500">
+                Actualizado:{" "}
+                {new Date(rate.fechaActualizacion).toLocaleString()}
+              </p>
             </div>
-            <p className="text-sm text-gray-500">
-              Actualizado: {new Date(rate.fechaActualizacion).toLocaleString()}
-            </p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </article>
+      </section>
     </div>
   );
 };
 
-export default Rates; 
+export default Rates;

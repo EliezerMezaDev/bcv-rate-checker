@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -14,13 +14,10 @@ const Navbar = () => {
           <Link to="/tasas" className="text-white hover:text-blue-200">
             Tasas
           </Link>
-          <Link to="/historial" className="text-white hover:text-blue-200">
-            Historial
-          </Link>
         </div>
       </div>
     </nav>
   );
 };
 
-export default Navbar; 
+export default Navbar;
