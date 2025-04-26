@@ -7,7 +7,7 @@ import CheckerForm from "../components/CheckerForm";
 
 const Home = () => {
   return (
-    <Section>
+    <Section containerClassName="space-y-8">
       <div>
         <h1 className="text-5xl font-bold mb-2">
           Bienvenido a BCV Rate Checker
@@ -17,14 +17,14 @@ const Home = () => {
           montos en dolares, y comprueba la diferencia cambiaria en tiempo real.
         </p>
       </div>
-      
-      <hr className="my-4 h-0.25 border-t-0 bg-base-950/10" />
-
-      <RatesCard />
 
       <hr className="my-4 h-0.25 border-t-0 bg-base-950/10" />
 
       <CheckerForm />
+
+      <hr className="my-4 h-0.25 border-t-0 bg-base-950/10" />
+
+      <RatesCard />
     </Section>
   );
 };

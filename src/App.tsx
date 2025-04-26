@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import Rates from "./pages/Rates";
 
 //? COMPONENTS
-import Navbar from "./components/Navbar";
+import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
 
 //? CONTEXT
 import { RatesProvider } from "./lib/context/RatesContext";
@@ -22,6 +23,8 @@ function App() {
               <Route path="/tasas" element={<Rates />} />
             </Routes>
           </main>
+
+          <Footer />
         </div>
       </Router>
     </RatesProvider>

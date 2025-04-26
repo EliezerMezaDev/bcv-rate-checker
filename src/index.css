@@ -25,3 +25,8 @@
   --color-accent-900: #7b330c;
   --color-accent-950: #471901;
 }
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
