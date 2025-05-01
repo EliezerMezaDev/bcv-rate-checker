@@ -34,7 +34,7 @@ git clone https://github.com/EliezerMezaDev/bcv-rate-checker.git
 bun install
 ```
 
-* Inicia el servidor de desarrollo:
+* Inicia el servidor de desarrollo :
 ```bash
 bun run dev
 ```
