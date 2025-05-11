@@ -1,6 +1,6 @@
 ## Change description
 
-| Description or Ticket here
+-
 
 ## Type of change
 
